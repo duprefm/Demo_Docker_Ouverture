@@ -49,6 +49,14 @@ serviceaccount/weave-scope created
 service/weave-scope-app created
 ```````````
 ### Récupération de l'url d'accès.
+``
+🐳 minikube service weave-scope-app --url -n weave
+http://192.168.99.106:30827
+``
+## Nettoyage
+`
+🐳 kubectl delete -f examples/k8s 
+`
 ## Wordpress
 ### Lancement
 Editer le fichier **kustomization.yaml** et y placer le mot de passe de la base Mysql.
@@ -67,3 +75,7 @@ persistentvolumeclaim/wp-pv-claim unchanged
 🐳 minikube service wordpress --url
 http://192.168.99.106:30830
 ``
+## Nettoyage
+`
+🐳 kubectl delete -k ./
+`
