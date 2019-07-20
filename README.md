@@ -30,10 +30,8 @@ Cluster local Kubernetes utilisé dans le cadre de phases de tests ou de dévelo
 ```
 ## Weave scope
 ### Création du namespace k8s
-``
-🐳 kubectl create ns weave
-namespace/weave created
-``
+> 🐳 kubectl create ns weave
+> namespace/weave created
 ### Lancement de l'application
 ```````````
 🐳 kubectl apply -f examples/k8s 
@@ -49,10 +47,8 @@ serviceaccount/weave-scope created
 service/weave-scope-app created
 ```````````
 ### Récupération de l'url d'accès.
-``
-🐳 minikube service weave-scope-app --url -n weave
-http://192.168.99.106:30827
-``
+> 🐳 minikube service weave-scope-app --url -n weave
+> http://192.168.99.106:30827
 ## Nettoyage
 `
 🐳 kubectl delete -f examples/k8s 
