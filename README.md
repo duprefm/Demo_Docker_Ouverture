@@ -2,6 +2,7 @@
 ## Minikube.
 Cluster local Kubernetes utilisé dans le cadre de phases de tests ou de développement.
 ## Démarrage.
+``````````````````
 🐳 Demo_Docker_Ouverture minikube start
 😄  minikube v1.0.1 on darwin (amd64)
 🤹  Downloading Kubernetes v1.14.1 images in the background ...
@@ -20,8 +21,9 @@ Cluster local Kubernetes utilisé dans le cadre de phases de tests ou de dévelo
 🤔  Verifying component health ......
 💗  kubectl is now configured to use "minikube"
 🏄  Done! Thank you for using minikube!
-  
+``````````````````  
 ## Arrêt.
+```
 🐳 Demo_Docker_Ouverture minikube stop
 ✋  Stopping "minikube" in virtualbox ...
 🛑  "minikube" stopped.
