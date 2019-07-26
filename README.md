@@ -23,15 +23,15 @@ EXPOSE 80
 CMD [ "/usr/sbin/httpd", "-DFOREGROUND" ]
 ``````
 ### Construction de l'image Docker.
-> docker build -t webserver:0.1 .
+> (⎈ |docker-for-desktop:default)🐳 Apache docker build -t webserver:0.1 .
 ### Lancement du container Docker.
-> 🐳 docker run -dit -p 1234:80 webserver:0.1
+> (⎈ |docker-for-desktop:default)🐳 Apache docker run -dit -p 1234:80 webserver:0.1
 
 `
 a906027058814311d858d6cfbca82b1bc5a1d02c25388f00be547608e1c14089
 `
 ### Vérification de la bonne execution du container.
-> 🐳 docker ps
+> (⎈ |docker-for-desktop:default)🐳 Apache docker ps
 
 ``
 CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                  NAMES
@@ -39,7 +39,7 @@ a90602705881        webserver:0.1       "/usr/sbin/httpd -DF…"   About a minut
 ``
 Le contenu de la page **index.html** est visible a l'adresse http://localhost:1234.
 ### Connexion a l'interieur du container.
-> 🐳 docker exec -it a90602705881 /bin/bash
+> (⎈ |docker-for-desktop:default)🐳 Apache docker exec -it a90602705881 /bin/bash
 
 `````````````
 [root@a90602705881 /]# ps -edf
@@ -61,7 +61,7 @@ Nous avons créer une image Docker, lancé un container et vérifié qu'il fonct
 ## Wordpress
 ### Lancement
 Editer le fichier **kustomization.yaml** et y placer le mot de passe de la base Mysql.
-> 🐳 kubectl apply -k ./
+> (⎈ |docker-for-desktop:default)🐳 wordpress kubectl apply -k ./
 
 ```````
 secret/mysql-pass-ffgtbt8k66 unchanged
@@ -73,10 +73,15 @@ persistentvolumeclaim/mysql-pv-claim unchanged
 persistentvolumeclaim/wp-pv-claim unchanged
 ```````
 ### Récupération de l'url d'accès.
-> 🐳 minikube service wordpress --url
+> (⎈ |docker-for-desktop:default)🐳 wordpress kubectl get svc
 
-`
-http://192.168.99.106:30830
-`
+````
+NAME              TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+kubernetes        ClusterIP      10.96.0.1       <none>        443/TCP        3d
+wordpress         LoadBalancer   10.111.137.66   localhost     80:30336/TCP   1h
+wordpress-mysql   ClusterIP      None            <none>        3306/TCP       1h
+````
+Le site wordpress est accessible a l'adresse http://localhost:30336
+
 ## Nettoyage
-> 🐳 kubectl delete -k ./
+> (⎈ |docker-for-desktop:default)🐳 wordpress kubectl delete -k ./
