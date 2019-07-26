@@ -1,35 +1,4 @@
 # Demo_Docker_Ouverture
-## Minikube.
-Cluster local Kubernetes utilisé dans le cadre de phases de tests ou de développement.
-### Démarrage.
-> 🐳 minikube start
-
-`````````````````
-😄  minikube v1.0.1 on darwin (amd64)
-🤹  Downloading Kubernetes v1.14.1 images in the background ...
-💡  Tip: Use 'minikube start -p <name>' to create a new cluster, or 'minikube delete' to delete this one.
-🔄  Restarting existing virtualbox VM for "minikube" ...
-⌛  Waiting for SSH access ...
-📶  "minikube" IP address is 192.168.99.106
-🐳  Configuring Docker as the container runtime ...
-🐳  Version of container runtime is 18.06.3-ce
-⌛  Waiting for image downloads to complete ...
-✨  Preparing Kubernetes environment ...
-🚜  Pulling images required by Kubernetes v1.14.1 ...
-🔄  Relaunching Kubernetes v1.14.1 using kubeadm ... 
-⌛  Waiting for pods: apiserver proxy etcd scheduler controller dns
-📯  Updating kube-proxy configuration ...
-🤔  Verifying component health ......
-💗  kubectl is now configured to use "minikube"
-🏄  Done! Thank you for using minikube!
-`````````````````
-### Arrêt.
-> 🐳 minikube stop
-
-``
-✋  Stopping "minikube" in virtualbox ...
-🛑  "minikube" stopped.
-``
 ## Créer une inmage Docker from scratch.
 Je vais créer une image proposant le service apache.
 - Contenu de mon fichier index.html:
@@ -57,6 +26,7 @@ CMD [ "/usr/sbin/httpd", "-DFOREGROUND" ]
 > docker build -t webserver:0.1 .
 ### Lancement du container Docker.
 > 🐳 docker run -dit -p 1234:80 webserver:0.1
+
 `
 a906027058814311d858d6cfbca82b1bc5a1d02c25388f00be547608e1c14089
 `
