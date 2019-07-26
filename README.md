@@ -37,7 +37,9 @@ a906027058814311d858d6cfbca82b1bc5a1d02c25388f00be547608e1c14089
 CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                  NAMES
 a90602705881        webserver:0.1       "/usr/sbin/httpd -DF…"   About a minute ago   Up About a minute   0.0.0.0:1234->80/tcp   great_benz
 ``
+
 Le contenu de la page **index.html** est visible a l'adresse http://localhost:1234.
+
 ### Connexion a l'interieur du container.
 > (⎈ |docker-for-desktop:default)🐳 Apache docker exec -it a90602705881 /bin/bash
 
@@ -56,6 +58,7 @@ apache      15     1  0 20:06 pts/0    00:00:00 /usr/sbin/httpd -DFOREGROUND
 root        16     0  0 20:12 pts/1    00:00:00 /bin/bash
 root        29    16  0 20:12 pts/1    00:00:00 ps -edf
 `````````````
+
 Nous avons créer une image Docker, lancé un container et vérifié qu'il fonctionnait.
 
 ## Wordpress
