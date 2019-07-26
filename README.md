@@ -32,6 +32,7 @@ a906027058814311d858d6cfbca82b1bc5a1d02c25388f00be547608e1c14089
 `
 ### Vérification de la bonne execution du container.
 > 🐳 docker ps
+
 ``
 CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                  NAMES
 a90602705881        webserver:0.1       "/usr/sbin/httpd -DF…"   About a minute ago   Up About a minute   0.0.0.0:1234->80/tcp   great_benz
